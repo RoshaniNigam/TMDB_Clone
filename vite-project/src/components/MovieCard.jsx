@@ -17,9 +17,9 @@ function MovieCard({ movieObject }) {
   }
 
   return (
-    <Link to={`/details/${movieObject.id}`}>
+    
     <div
-      className="h-[45vh] w-[250px]  bg-center bg-cover rounded-xl hover:scale-110 duration-300 hover:cursor-pointer flex flex-col justify-between items-end"
+      className="h-[45vh] w-[250px]  bg-center bg-cover rounded-xl hover:scale-110 duration-300 flex flex-col justify-between " title="Click on Movie_Name for more info"
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/original/${movieObject.poster_path})`,
       }}
@@ -40,12 +40,12 @@ function MovieCard({ movieObject }) {
           &#128525;
         </div>
       )}
-
-      <div className="text-white w-full text-center text-xl  bg-gray-900/80 rounded-lg" title="Click for info">
+      <Link to={`/details/${movieObject.id}`}>
+      <div className="text-white w-full text-center text-xl bg-gray-900/80 rounded-lg" title="Click for info">
         {movieObject.title}
       </div>
-    </div>
       </Link>
+    </div>
   );
 }
 
